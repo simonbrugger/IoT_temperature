@@ -1,4 +1,4 @@
-#include "Adafruit_DHT.h"
+#include "Adafruit_DHT/Adafruit_DHT.h"
 
 // DHT parameters
 #define DHTPIN 5
