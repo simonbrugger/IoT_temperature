@@ -1,6 +1,5 @@
 #include "Adafruit_DHT.h"
 
-
 // DHT parameters
 #define DHTPIN 5
 #define DHTTYPE DHT22
@@ -11,15 +10,15 @@ int humidity;
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
-  dht.begin();
+   dht.begin();
 }
 
 void loop() {
-  temperature = dht.getTempCelcius();
-  humidity = dht.getHumidity();
+   temperature = dht.getTempCelcius();
+   humidity = dht.getHumidity();
 
-  Particle.publish("Temperatur", String(temperature), PRIVATE);
-  Particle.publish("Luftfeuchtigkeit", String(humidity), PRIVATE);
+   Particle.publish("temperature", String(temperature), PRIVATE);
+   Particle.publish("humidity", String(humidity), PRIVATE);
 
-  delay(5000);
+   delay(5000); //5 seconds delay
 }
